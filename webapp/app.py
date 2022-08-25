@@ -241,7 +241,8 @@ def _careers_pagination(job_list, start, stop):
 def all_jobs():
     limit = flask.request.args.get("limit", default=20, type=int)
     page = flask.request.args.get("page", default=1, type=int)
-
+    details = flask.request.args.get("details", type=str)
+    
     context = {
         "all_departments": _group_by_department(greenhouse.get_vacancies())
     }
@@ -253,10 +254,14 @@ def all_jobs():
 
     jobs_list = context["vacancies_json"]
 
+    # import ipdb
+    # ipdb.set_trace()
+    # if details:
+    #     if details in conte
     total_results = len(jobs_list)
     total_pages = ceil(total_results / limit)
 
-    jobs_list = _careers_pagination(jobs_list, 0, limit * page)
+    # jobs_list = _careers_pagination(jobs_list, 0, limit * page)
 
     return flask.render_template(
         "/careers/all.html",
@@ -266,6 +271,7 @@ def all_jobs():
         jobs_list=jobs_list,
         limit=limit,
         page=page,
+        details=details
     )
 
 
