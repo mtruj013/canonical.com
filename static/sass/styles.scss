@@ -1,4 +1,5 @@
-$color-tabs-active-bar: #000;
+$color-tabs-active-bar: #e95420;
+
 @import "../../node_modules/vanilla-framework";
 
 // import cookie policy
@@ -358,27 +359,6 @@ $p-small-lh-diff: map-get($line-heights, default-text) - map-get($line-heights, 
   }
 }
 
-.p-side-navigation__drawer.is-documentation{
- ul li {
-  background: $color-paper;
-
-  a {
-    color: $color-link;
-    padding-left: 0;
-
-    &:visited {
-      color: $color-link-visited;
-    }
-  }
- }
-}
-
-.documentation-images {
-  height: 100px;
-  object-fit: cover;
-  width: 64px;
-}
-
 // XXX: Ant - 21/02/2023
 // Fix for breakage introduced in Vanilla v3.11.1
 // Reported: https://github.com/canonical/vanilla-framework/issues/4664
@@ -607,7 +587,6 @@ $p-small-lh-diff: map-get($line-heights, default-text) - map-get($line-heights, 
   max-width: $grid-max-width;
   padding-top: 19%;
 }
-
 
 // Remote work collage
 .p-remote-work__collage-container {
